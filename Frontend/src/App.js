@@ -1,25 +1,31 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import Login from './components/Login';
-import Register from './components/Register';
-import Courses from './components/Course';
-import { Navbar } from './components/Navbar';
+import { Login } from "./components/Login"
+import { Navbar } from "./components/Navbar"
+import { Register } from "./components/Register"
 import './App.css';
+import Courses from './components/Courses';
+import { useDispatch } from 'react-redux';
+import { getAllCourses } from './redux/actions/authActions';
+import { useEffect } from 'react';
+import CourseList from './components/CourseList';
 
-const App = () => {
-  let token = localStorage.getItem('token');
-  let user = JSON.parse(localStorage.getItem('user'));
+function App() {
 
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllCourses())
+  }, [dispatch]);
   return (
     <div className="App">
       <ToastContainer />
-      <Navbar token={token} user={user} />
+      <Navbar />
       <Routes>
-        <Route path='/' element={<Login token={token} user={user} />} />
-        <Route path='/register' element={<Register token={token} user={user} />} />
-        <Route path='/courses' element={<Courses token={token} user={user} />} />
-   
+        <Route path='/' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/courses' element={<Courses />} />
+        <Route path='/courseList' element={<CourseList />} />
+
       </Routes>
     </div>
   );
