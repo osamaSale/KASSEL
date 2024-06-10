@@ -39,14 +39,14 @@ A course management web application where teachers can create and update courses
 2. **Install server dependencies:**
 
  ``` bash
- CD server
+ CD Backend
  npm install
  ```
 
 3. **Install client dependencies:**
 
  ``` bash
- cd../client
+ cd../Frontend
  npm install
  ```
 
@@ -86,11 +86,14 @@ A course management web application where teachers can create and update courses
  Create an `.env` file in the `server` directory with the following content:
 
  ```Environment
- DB_HOST=localhost
- DB_USER=root
- DB_PASSWORD=Your password
- DB_NAME=course_management
- JWT_SECRET=your_jwt_secret
+DB_HOST='localhost'
+DB_USER='root'
+DB_PASS='0000'
+DB_NAME='kasselsoft'
+
+JWT_SECRET='/u,-rl2v3rp5D`8i4*cJ67YTX"<`_?'
+SECRET='/u,-rl2v3rp5D`8i4*cJ67YTX"<`_?'
+TOKEN_EXPIRATION='h1'
  ```
 
 ## Run the application
@@ -98,8 +101,9 @@ A course management web application where teachers can create and update courses
 1. **Starting the server:**
 
  ``` bash
- CD server
- npm start
+ CD ../Backend
+ 
+ npm run dev
  ```
 
  The server will run at `http://localhost:5000`.
@@ -107,7 +111,7 @@ A course management web application where teachers can create and update courses
 2. **Start the client:**
 
  ``` bash
- cd../client
+ cd../Frontend
  npm start
  ```
 
