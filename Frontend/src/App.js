@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
-      <Navbar />sdfsedvsd
+      <Navbar />
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/register' element={<Register />} />
