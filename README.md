@@ -33,7 +33,6 @@ A course management web application where teachers can create and update courses
 
  ``` bash
  Git clone https://github.com/osamaSale/KASSEL
- Course management system cd
  ```
 
 2. **Install server dependencies:**
@@ -76,8 +75,6 @@ A course management web application where teachers can create and update courses
  text description,
  start_date date,
  end_date date,
- teacher_id you are,
- Foreign key (teacher_id) User references (id)
  );
  ```
 
